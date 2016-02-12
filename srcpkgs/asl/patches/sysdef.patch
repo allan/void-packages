@@ -1,0 +1,35 @@
+--- sysdefs.h	1998-11-03 23:12:15.000000000 +0100
++++ sysdefs.h	2016-02-12 10:54:10.961762536 +0100
+@@ -724,6 +724,32 @@
+ 
+ #endif /* __i386 */
+ 
++#ifdef __x86_64__
++
++#define ARCHPRNAME "x86_64"
++
++#ifdef __linux__
++#define ARCHSYSNAME "unknown-linux"
++#define DEFSMADE
++#define OPENRDMODE "r"
++#define OPENWRMODE "w"
++#define OPENUPMODE "r+"
++#define IEEEFLOAT
++typedef signed char Integ8;
++typedef unsigned char Card8;
++typedef signed short Integ16;
++typedef unsigned short Card16;
++#define HAS16
++typedef signed int Integ32;
++typedef unsigned int Card32;
++typedef signed long Integ64;
++typedef unsigned long Card64;
++#define HAS64
++#define LOCALE_NLS
++#endif
++
++#endif /* __x86_64__ */
++
+ /*===========================================================================*/
+ /* Misc... */
+ 

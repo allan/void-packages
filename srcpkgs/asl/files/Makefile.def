@@ -1,0 +1,25 @@
+# -------------------------------------------------------------------------
+# choose your compiler (must be ANSI-compliant!) and linker command, plus
+# any additionally needed flags
+
+LD = ${CC}
+
+#            ^^^^^
+#            |||||
+# adapt this to your target cpu (386/486 or higher)
+# -------------------------------------------------------------------------
+# directories where binaries, includes, and manpages should go during
+# installation
+
+BINDIR = /usr/bin
+INCDIR = /usr/include/asl
+MANDIR = /usr/share/man
+LIBDIR = /usr/lib/asl
+DOCDIR = /usr/share/asl/doc
+
+# -------------------------------------------------------------------------
+# character encoding to use (choose one of them)
+
+CHARSET = CHARSET_ISO8859_1
+# CHARSET = CHARSET_ASCII7
+# CHARSET = CHARSET_IBM437

@@ -1,0 +1,24 @@
+# Template file for 'asl'
+pkgname=asl
+version=1.41r8
+revision=1
+short_desc="A portable macro cross assembler for microprocessors/controllers"
+maintainer="allan <mail@may.mooo.com>"
+license="custom"
+homepage="http://john.ccac.rwth-aachen.de:8000/as/"
+distfiles="http://john.ccac.rwth-aachen.de:8000/ftp/as/source/c_version/asl-${version}.tar.gz"
+checksum=22ff3f3ccf7c3005b6f8f9014773905b309e3a8942a3a6a8fc911c8648a42345
+
+do_configure() {
+	cp ${FILESDIR}/Makefile.def .
+
+	sed -i -e "2i\\\nalias mkdirhier='mkdir -p'\n" \
+		-e "/  strip \$i/d" install.sh
+}
+do_install() {
+	make DESTDIR=${DESTDIR} install
+
+	# some "license"
+	sed -n 9,22p README >LICENSE
+	vlicense LICENSE
+}
