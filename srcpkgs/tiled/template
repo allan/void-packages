@@ -1,0 +1,13 @@
+# Template file for 'tiled'
+pkgname=tiled
+version=0.17.0
+revision=1
+build_style=qmake
+hostmakedepends="qt5-tools"
+makedepends="qt5-devel"
+short_desc="Tile map editor"
+maintainer="allan <mail@may.mooo.com>"
+license="GPL"
+homepage="http://www.mapeditor.org/"
+distfiles="https://github.com/bjorn/tiled/archive/v${version}.tar.gz"
+checksum=f7fce2006a04c9e6e5d45a15fb31d342a4a66f7a01e1e6bc0753035cfbf42f31
